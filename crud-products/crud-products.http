@@ -1,6 +1,6 @@
-@crud_products_HostAddress = http://localhost:5153
+@localhost = http://localhost:5153
 
-GET {{crud_products_HostAddress}}/weatherforecast/
+POST {{localhost}}/product/
 Accept: application/json
 
 ###
