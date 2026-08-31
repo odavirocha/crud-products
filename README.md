@@ -1,2 +1,4 @@
-# crud-products
-CRUD simples com intenção de entender a sintaxe do C#.
+# CRUD-PRODUCTS
+**Objetivo:**
+Esse projeto tem como objetivo me desafiar a ver como funciona a sintaxe do C#.
+

@@ -1,4 +1,5 @@
 ﻿using crud_products.DTOs;
+using crud_products.Entity;
 using crud_products.Service;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,9 +18,10 @@ public class ProductController : ControllerBase
     }
     
     [HttpPost]
-    public DefaultResponseDTO CreateProduct([FromBody] ProductDTO product)
+    public IActionResult CreateProduct([FromBody] ProductDTO product)
     {
-        return _productService.CreateProduct(product);
+        ProductEntity productEntity = _productService.CreateProduct(product);
+        return Created("Produto criado com sucesso!", productEntity);
     }
     
 }

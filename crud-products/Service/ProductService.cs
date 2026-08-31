@@ -15,14 +15,17 @@ public class ProductService
         _context = context;
     }
     
-    public DefaultResponseDTO CreateProduct(ProductDTO product)
+    public ProductEntity CreateProduct(ProductDTO product)
     {
-        
         ProductEntity productEntity = new ProductEntity { Name = product.Name, Qntd = product.Qntd};
+
+        if (_context.Products.Any(p => p.Name == product.Name)) {
+            throw new Exception("Product already exists");
+        }
         
         _context.Products.Add(productEntity);
         _context.SaveChanges();
-        return new  DefaultResponseDTO("Product Created" + productEntity.Id);
+        return productEntity;
     }
     
 }
