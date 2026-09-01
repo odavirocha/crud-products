@@ -1,4 +1,5 @@
 using crud_products.Data;
+using crud_products.Exceptions;
 using crud_products.Service;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,7 +16,12 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddScoped<ProductService>(); // Meu service
 
+builder.Services.AddExceptionHandler<AppExceptionHandler>();
+builder.Services.AddProblemDetails();
+
 var app = builder.Build();
+
+app.UseExceptionHandler();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
