@@ -1,6 +1,11 @@
 @localhost = http://localhost:5153
 
-POST {{localhost}}/product/
+POST {{localhost}}/products/
 Accept: application/json
+Content-Type: application/json
 
+###
+
+GET {{localhost}}/products/
+Accept: application/json
 ###

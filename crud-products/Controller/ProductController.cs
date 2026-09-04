@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace crud_products.Controller;
 
 [ApiController]
-[Route("[controller]")]
+[Route("products")]
 public class ProductController : ControllerBase
 {
 
@@ -22,6 +22,13 @@ public class ProductController : ControllerBase
     {
         ProductEntity productEntity = _productService.CreateProduct(product);
         return Created("Produto criado com sucesso!", productEntity);
+    }
+
+    [HttpGet]
+    public IActionResult GetProducts()
+    {
+        List<ProductEntity> productEntities = _productService.GetProducts();
+        return Ok(productEntities);
     }
     
 }

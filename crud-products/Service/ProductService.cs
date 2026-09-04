@@ -28,5 +28,10 @@ public class ProductService
         _context.SaveChanges();
         return productEntity;
     }
+
+    public List<ProductEntity> GetProducts()
+    {
+        return _context.Products.ToList();
+    }
     
 }
