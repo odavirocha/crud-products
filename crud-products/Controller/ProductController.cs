@@ -30,5 +30,12 @@ public class ProductController : ControllerBase
         List<ProductEntity> productEntities = _productService.GetProducts();
         return Ok(productEntities);
     }
+
+    [HttpGet("{id}")]
+    public IActionResult GetProduct(int id)
+    {
+        ProductEntity productEntity = _productService.GetProduct(id);
+        return Ok(productEntity);
+    }
     
 }

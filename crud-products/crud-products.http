@@ -3,9 +3,12 @@
 POST {{localhost}}/products/
 Accept: application/json
 Content-Type: application/json
-
 ###
 
 GET {{localhost}}/products/
+Accept: application/json
+###
+
+GET {{localhost}}/products/{id}
 Accept: application/json
 ###

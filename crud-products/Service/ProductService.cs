@@ -33,5 +33,10 @@ public class ProductService
     {
         return _context.Products.ToList();
     }
+
+    public ProductEntity GetProduct(int id)
+    {
+        return _context.Products.Find(id);
+    }
     
 }
